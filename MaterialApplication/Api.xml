@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Material.API</name>
+    </assembly>
+    <members>
+        <member name="T:Material.API.Controllers.MaterialController">
+            <summary>
+            Material Controller
+            </summary>
+        </member>
+        <member name="M:Material.API.Controllers.MaterialController.#ctor(Material.Core.Services.IMaterialServices)">
+            <summary>
+            MaterialController Constructor
+            </summary>
+            <param name="materialService"></param>
+        </member>
+        <member name="M:Material.API.Controllers.MaterialController.CreateMaterial(Material.Core.Models.MaterialModel)">
+            <summary>
+            Add new material to database
+            </summary>
+            <param name="material"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Material.API.Controllers.MaterialController.GetMaterialById(System.String)">
+            <summary>
+            Get material by id
+            </summary>
+            <param name="id">return material info</param>
+            <returns></returns>
+        </member>
+        <member name="M:Material.API.Controllers.MaterialController.GetMaterialByName(System.String)">
+            <summary>
+            Get material by name
+            </summary>
+            <param name="name"></param>
+            <returns>return material info</returns>
+        </member>
+        <member name="M:Material.API.Controllers.MaterialController.UpdateMaterial(Material.Core.Models.MaterialModel)">
+            <summary>
+            Update material info
+            </summary>
+            <param name="newMaterial"></param>
+            <returns>Return updated material</returns>
+        </member>
+        <member name="M:Material.API.Controllers.MaterialController.DeleteMaterial(System.String)">
+            <summary>
+            Delete material by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
