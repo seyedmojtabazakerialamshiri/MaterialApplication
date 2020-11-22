@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using Material.Core.DTOs;
 using Material.Core.Models;
 using Material.Core.Repository;
 using Material.Core.Services;
@@ -14,27 +15,27 @@ namespace Material.Services
             _repository = repository;
         }
 
-        public MaterialModel GetMaterialById(string id)
+        public MaterialDto GetMaterialById(string id)
         {
             return _repository.GetMaterialById(id); 
         }
 
-        public MaterialModel GetMaterialByName(string name)
+        public MaterialDto GetMaterialByName(string name)
         {
             return _repository.GetMaterialByName(name);
         }
 
-        public MaterialModel CreateMaterial(MaterialModel material)
+        public MaterialDto CreateMaterial(MaterialDto material)
         {
             return _repository.CreateMaterial(material);
         }
 
-        public MaterialModel UpdateMaterial(Core.Models.MaterialModel newMaterial)
+        public MaterialDto UpdateMaterial(UpdateDto newMaterial)
         {
             return _repository.UpdateMaterial(newMaterial);
         }
 
-        public MaterialModel DeleteMaterial(string id)
+        public MaterialDto DeleteMaterial(string id)
         {
             return _repository.DeleteMaterial(id);
         }

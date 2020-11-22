@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text;
-using Material.Core.Models;
+﻿using System.ComponentModel.DataAnnotations;
+using Material.Core.DTOs;
 
 namespace Material.Core.Validation
 {
@@ -22,28 +19,60 @@ namespace Material.Core.Validation
 
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
-            var material = (MaterialModel)validationContext.ObjectInstance;
-            if (material.MaterialFunction == null) return ValidationResult.Success;
-            if (material.MaterialFunction.MinTemp < 4 || material.MaterialFunction.MaxTemp > 80)
-            {
-                return new ValidationResult(GetErrorMessage());
-            }
 
-            var minResult = material.MaterialFunction.MinTemp / (float)0.1;
-            var minrounded = (int) minResult;
-            if (minResult - minrounded != 0)
+            if (validationContext.ObjectType.FullName.Contains("UpdateDto"))
             {
-                return new ValidationResult(GetErrorMessage());
-            }
+                var material = (UpdateDto)validationContext.ObjectInstance;
+                if (material.MaterialFunction == null) return ValidationResult.Success;
+                if (material.MaterialFunction.MinTemp < 4 || material.MaterialFunction.MaxTemp > 80)
+                {
+                    return new ValidationResult(GetErrorMessage());
+                }
 
-            var maxResult = material.MaterialFunction.MaxTemp / (float)0.1;
-            var maxrounded = (int)maxResult;
-            if (maxResult - maxrounded != 0)
+                var minResult = material.MaterialFunction.MinTemp / (float)0.1;
+                var minrounded = (int)minResult;
+                if (minResult - minrounded != 0)
+                {
+                    return new ValidationResult(GetErrorMessage());
+                }
+
+                var maxResult = material.MaterialFunction.MaxTemp / (float)0.1;
+                var maxrounded = (int)maxResult;
+                if (maxResult - maxrounded != 0)
+                {
+                    return new ValidationResult(GetErrorMessage());
+                }
+
+                return ValidationResult.Success;
+            }
+            else if (validationContext.ObjectType.FullName.Contains("MaterialDto"))
             {
-                return new ValidationResult(GetErrorMessage());
+                var material = validationContext.ObjectInstance as MaterialDto;
+                if (material.MaterialFunction == null) return ValidationResult.Success;
+                if (material.MaterialFunction.MinTemp < 4 || material.MaterialFunction.MaxTemp > 80)
+                {
+                    return new ValidationResult(GetErrorMessage());
+                }
+
+                var minResult = material.MaterialFunction.MinTemp / (float)0.1;
+                var minrounded = (int)minResult;
+                if (minResult - minrounded != 0)
+                {
+                    return new ValidationResult(GetErrorMessage());
+                }
+
+                var maxResult = material.MaterialFunction.MaxTemp / (float)0.1;
+                var maxrounded = (int)maxResult;
+                if (maxResult - maxrounded != 0)
+                {
+                    return new ValidationResult(GetErrorMessage());
+                }
+
+                return ValidationResult.Success;
             }
 
             return ValidationResult.Success;
+
         }
     }
 }

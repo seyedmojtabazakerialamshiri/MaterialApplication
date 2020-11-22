@@ -1,10 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Material.Core.Enums;
-using Material.Core.Validation;
+using Material.Core.Models;
 
-namespace Material.Core.Models
+namespace Material.Core.DTOs
 {
-    public class MaterialModel
+    public class UpdateDto 
     {
         public string Id { get; set; }
         [Required]
@@ -14,7 +13,7 @@ namespace Material.Core.Models
         [Required]
         public bool Visible { get; set; }
         [Required]
-        public MaterialTypeEnum.MaterialType MaterialType { get; set; }
+        public string MaterialType { get; set; }
         [Required]
         public string Notes { get; set; }
         public MaterialFunction MaterialFunction { get; set; }

@@ -1,15 +1,16 @@
 ﻿using System.Threading.Tasks;
+using Material.Core.DTOs;
 using Material.Core.Models;
 
 namespace Material.Core.Repository
 {
     public interface IDocumentRepository
     {
-        MaterialModel CreateMaterial(MaterialModel material);
-        MaterialModel GetMaterialById(string id);
-        MaterialModel GetMaterialByName(string name);
-        MaterialModel UpdateMaterial(MaterialModel newMaterial);
-        MaterialModel DeleteMaterial(string id);
+        MaterialDto CreateMaterial(MaterialDto material);
+        MaterialDto GetMaterialById(string id);
+        MaterialDto GetMaterialByName(string name);
+        MaterialDto UpdateMaterial(UpdateDto newMaterial);
+        MaterialDto DeleteMaterial(string id);
 
     }
 }

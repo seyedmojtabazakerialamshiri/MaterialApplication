@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace Material.API.Api
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class ApiResultFilterAttribute : ActionFilterAttribute
     {
         public override void OnResultExecuting(ResultExecutingContext context)

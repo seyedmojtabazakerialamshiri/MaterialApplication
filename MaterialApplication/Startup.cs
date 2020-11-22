@@ -1,4 +1,6 @@
 using System;
+using AutoMapper;
+using Material.API.Api;
 using Material.Core.Middlewares;
 using Material.Core.Repository;
 using Material.Core.Services;
@@ -7,7 +9,6 @@ using Material.Data.Repository;
 using Material.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -31,6 +32,12 @@ namespace Material.API
             services.Configure<RavenSettings>(Configuration.GetSection("Raven"));
             services.AddScoped<IDocumentRepository, DocumentRepository>();
             services.AddScoped<IMaterialServices, MaterialServices>();
+
+            var mappingConfig = new MapperConfiguration(mc => {
+                mc.AddProfile(new AutoMapperProfile());
+            });
+            var mapper = mappingConfig.CreateMapper();
+            services.AddSingleton(mapper);
 
             services.AddSwaggerGen(option =>
             {

@@ -4,6 +4,21 @@
         <name>Material.API</name>
     </assembly>
     <members>
+        <member name="T:Material.API.Api.ApiResultFilterAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Material.API.Api.AutoMapperProfile">
+            <summary>
+            Mapping Profile
+            </summary>
+        </member>
+        <member name="M:Material.API.Api.AutoMapperProfile.#ctor">
+            <summary>
+            Mapping rules
+            </summary>
+        </member>
         <member name="T:Material.API.Controllers.MaterialController">
             <summary>
             Material Controller
@@ -15,7 +30,7 @@
             </summary>
             <param name="materialService"></param>
         </member>
-        <member name="M:Material.API.Controllers.MaterialController.CreateMaterial(Material.Core.Models.MaterialModel)">
+        <member name="M:Material.API.Controllers.MaterialController.CreateMaterial(Material.Core.DTOs.MaterialDto)">
             <summary>
             Add new material to database
             </summary>
@@ -36,7 +51,7 @@
             <param name="name"></param>
             <returns>return material info</returns>
         </member>
-        <member name="M:Material.API.Controllers.MaterialController.UpdateMaterial(Material.Core.Models.MaterialModel)">
+        <member name="M:Material.API.Controllers.MaterialController.UpdateMaterial(Material.Core.DTOs.UpdateDto)">
             <summary>
             Update material info
             </summary>

@@ -1,4 +1,6 @@
 ﻿using System;
+using Material.Core.DTOs;
+using Material.Core.Enums;
 
 namespace Material.Core.Helper
 {
@@ -9,10 +11,10 @@ namespace Material.Core.Helper
             return val.Replace(@"%2F", "/");
         }
 
-        public static Models.MaterialModel MapProp(this Models.MaterialModel material, Models.MaterialModel newMaterial)
+        public static Models.MaterialModel MapProp(this Models.MaterialModel material, UpdateDto newMaterial)
         {
             material.Author = newMaterial.Author;
-            material.MaterialType = newMaterial.MaterialType;
+            material.MaterialType = (MaterialTypeEnum.MaterialType)Enum.Parse(typeof(MaterialTypeEnum.MaterialType), newMaterial.MaterialType); 
             material.Name = newMaterial.Name;
             material.Notes = newMaterial.Notes;
             material.Visible = newMaterial.Visible;
