@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Material.Core.Enums;
 using Material.Core.Models;
 
 namespace Material.Core.DTOs

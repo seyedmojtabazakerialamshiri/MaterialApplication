@@ -1,6 +1,4 @@
-﻿using System.Threading.Tasks;
-using Material.Core.DTOs;
-using Material.Core.Models;
+﻿using Material.Core.DTOs;
 using Material.Core.Repository;
 using Material.Core.Services;
 

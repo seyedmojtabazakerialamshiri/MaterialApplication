@@ -12,6 +12,10 @@ namespace Material.API.Api
     /// </summary>
     public class ApiResultFilterAttribute : ActionFilterAttribute
     {
+        /// <summary>
+        /// Called before the action result executes.
+        /// </summary>
+        /// <param name="context"></param>
         public override void OnResultExecuting(ResultExecutingContext context)
         {
             if (context.Result is OkObjectResult okObjectResult)

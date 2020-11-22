@@ -9,6 +9,12 @@
             
             </summary>
         </member>
+        <member name="M:Material.API.Api.ApiResultFilterAttribute.OnResultExecuting(Microsoft.AspNetCore.Mvc.Filters.ResultExecutingContext)">
+            <summary>
+            Called before the action result executes.
+            </summary>
+            <param name="context"></param>
+        </member>
         <member name="T:Material.API.Api.AutoMapperProfile">
             <summary>
             Mapping Profile

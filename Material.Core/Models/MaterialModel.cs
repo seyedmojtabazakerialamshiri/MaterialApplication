@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Material.Core.Enums;
-using Material.Core.Validation;
 
 namespace Material.Core.Models
 {

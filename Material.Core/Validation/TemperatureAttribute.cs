@@ -20,7 +20,7 @@ namespace Material.Core.Validation
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
 
-            if (validationContext.ObjectType.FullName.Contains("UpdateDto"))
+            if (validationContext.ObjectType.FullName != null && validationContext.ObjectType.FullName.Contains("UpdateDto"))
             {
                 var material = (UpdateDto)validationContext.ObjectInstance;
                 if (material.MaterialFunction == null) return ValidationResult.Success;
