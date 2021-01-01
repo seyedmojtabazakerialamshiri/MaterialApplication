@@ -23,7 +23,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Material.Core\Material.Core.csproj" />
-    <ProjectReference Include="..\Material.Data\Material.Data.csproj" />
     <ProjectReference Include="..\MaterialApplication.Services\Material.Services.csproj" />
   </ItemGroup>
 

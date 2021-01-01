@@ -1,14 +1,15 @@
 ﻿using Material.Core.DTOs;
 using Material.Core.Repository;
 using Material.Core.Services;
+using Material.Data.Repository;
 
 namespace Material.Services
 {
     public class MaterialServices : IMaterialServices
     {
-        private readonly IDocumentRepository _repository;
+        private readonly DocumentRepository _repository;
 
-        public MaterialServices(IDocumentRepository repository)
+        public MaterialServices(DocumentRepository repository)
         {
             _repository = repository;
         }

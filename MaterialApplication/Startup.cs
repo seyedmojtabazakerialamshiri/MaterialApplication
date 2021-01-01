@@ -4,8 +4,7 @@ using Material.API.Api;
 using Material.Core.Middlewares;
 using Material.Core.Repository;
 using Material.Core.Services;
-using Material.Data.Configs;
-using Material.Data.Repository;
+using Material.Core.Settings;
 using Material.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -30,7 +29,6 @@ namespace Material.API
         {
             services.AddControllers();
             services.Configure<RavenSettings>(Configuration.GetSection("Raven"));
-            services.AddScoped<IDocumentRepository, DocumentRepository>();
             services.AddScoped<IMaterialServices, MaterialServices>();
 
             var mappingConfig = new MapperConfiguration(mc => {

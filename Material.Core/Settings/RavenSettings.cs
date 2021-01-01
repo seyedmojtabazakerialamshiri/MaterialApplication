@@ -1,4 +1,6 @@
-﻿namespace Material.Data.Configs
+﻿
+
+namespace Material.Core.Settings
 {
     public class RavenSettings
     {

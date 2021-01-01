@@ -5,14 +5,14 @@ using Material.Core.DTOs;
 using Material.Core.Helper;
 using Material.Core.Models;
 using Material.Core.Repository;
-using Material.Data.Configs;
+using Material.Core.Settings;
 using Microsoft.Extensions.Options;
 using Raven.Client.Documents;
 
 
 namespace Material.Data.Repository
 {
-    public class DocumentRepository : IDocumentRepository
+    public class DocumentRepository 
     {
         protected DocumentStore DataContext { get; set; }
         protected readonly IMapper Mapper;
